@@ -3,7 +3,7 @@ from ast import If
 import csv
 
 csvpath = "C:/Users/manen/Desktop/class/ASU/Homework/python-challenge/PyPoll/Resources/election_data.csv"
-output_path = "C:/Users/manen/Desktop/class/ASU/Homework/python-challenge/PyPoll/Resources/summary.csv"
+output_path = "C:/Users/manen/Desktop/class/ASU/Homework/python-challenge/PyPoll/Resources/summaryPayPoll.csv"
 
 with open(csvpath, 'r') as csvfile:
     csvreader = csv.reader(csvfile)
@@ -65,24 +65,26 @@ print(f'Total Votes: {total_votes}')
 print('------------------------------------------------------------')
 
 
-print(f'Charles: {charles_percentage: .2f}% ({charles_votes})')
-print(f'Diana: {diana_percentage:.2f}% ({diana_votes})')
-print(f'Raymon: {raymon_percentage:.2f}% ({raymon_votes})')
+print(f'Charles Casper Stockham: {charles_percentage: .2f}% ({charles_votes})')
+print(f'Diana DeGette: {diana_percentage:.2f}% ({diana_votes})')
+print(f'Raymon Anthony Doane: {raymon_percentage:.2f}% ({raymon_votes})')
 print('------------------------------------------------------------')
 
 print(f'Winner:{winner}')
 
 
- #Write txt file
-#with open(output_path, 'w', newline='') as csvfile:
-    #csvwriter = csv.writer(csvfile)
-    #csvwriter.writerow(['Module 3 challenge'])
-    #csvwriter.writerow(['Maria Valdivieso'])
-    #csvwriter.writerow([''])
-    #csvwriter.writerow(['Financial Analysis Summary'])
-    #csvwriter.writerow(['------------------------------------------------------------'])
-    #csvwriter.writerow([f'Total Months: {total_months}'])
-    #csvwriter.writerow([f'Total Profit/Losses: $ {total_profit_losses}'])
-    #csvwriter.writerow([f'Average Change: {average_change}'])
-    #csvwriter.writerow([f'Greatest Increase in Profits: {greatest_increase_date} (${greatest_increase})'])
-    #csvwriter.writerow([f'Greatest Decrease in Profits: {greatest_decrease_date} (${greatest_decrease})'])
+#Write txt file
+with open(output_path, 'w', newline='') as csvfile:
+    csvwriter = csv.writer(csvfile)
+    csvwriter.writerow(['Module 3 challenge'])
+    csvwriter.writerow(['Maria Valdivieso'])
+    csvwriter.writerow([''])
+    csvwriter.writerow(['Election Results'])
+    csvwriter.writerow(['------------------------------------------------------------'])
+    csvwriter.writerow([f'Total Votes: {total_votes}'])
+    csvwriter.writerow(['------------------------------------------------------------'])
+    csvwriter.writerow([f'Charles Casper Stockham: {charles_percentage: .2f}% ({charles_votes})'])
+    csvwriter.writerow([f'Diana DeGette: {diana_percentage:.2f}% ({diana_votes})'])
+    csvwriter.writerow([f'Raymon Anthony Doane: {raymon_percentage:.2f}% ({raymon_votes})'])
+    csvwriter.writerow(['------------------------------------------------------------'])
+    csvwriter.writerow([f'Winner:{winner}'])
